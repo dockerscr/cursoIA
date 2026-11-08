@@ -1,8 +1,8 @@
 # Launch Catalog Specification
 
 - **Reference**: `PRD.md` FR1
-- **Issue**: _to be created_
-- **Status**: Draft
+- **Issue**: [`specs/feat-launch-catalog.issue.json`](./feat-launch-catalog.issue.json)
+- **Status**: Planned
 
 ## Problem Description
 

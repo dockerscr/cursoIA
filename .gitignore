@@ -1,0 +1,21 @@
+# Build output
+target/
+*.war
+*.class
+
+# Maven wrapper (only-script mode does not need the jar)
+.mvn/wrapper/maven-wrapper.jar
+
+# IDE and OS files
+.idea/
+*.iml
+.vscode/
+.settings/
+.classpath
+.project
+.DS_Store
+Thumbs.db
+
+# Logs and local environment
+*.log
+.env

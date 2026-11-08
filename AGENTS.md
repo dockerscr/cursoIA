@@ -68,6 +68,8 @@ mvn wildfly:undeploy
 ## Environment
 - Code and documentation must be in English.
 - Chat responses must be in the language of the user prompt.
+- Repository remote: https://github.com/dockerscr/cursoIA.git
+- Maven is not installed globally; use the Maven Wrapper (`.\mvnw.cmd` on Windows, `./mvnw` on git bash).
 - Windows environment; use PowerShell or git bash.
 - Mind the available **agent skills** when performing tasks.
 - Use the OpenCode agents in `.opencode/`; keep specs in `specs/`.
