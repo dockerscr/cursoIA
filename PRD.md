@@ -66,7 +66,7 @@ Out of scope:
 ## Technical Requirements
 
 ### TR1 Java Servlet and JSP application
-- **Description**: Build a Jakarta EE web application using Servlets, JSP and JSTL, managed with Maven, targeting JDK 17+ and packaged as a WAR for Tomcat 10+.
+- **Description**: Build a Jakarta EE web application using Servlets, JSP and JSTL, managed with Maven, targeting JDK 27 and packaged as a WAR for Wildfly 41.
 - **Priority**: High
 - **Status**: NotStarted
 
