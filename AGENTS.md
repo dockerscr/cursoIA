@@ -25,7 +25,8 @@ mvn wildfly:deploy  # deploy to a running server
 mvn wildfly:undeploy
 ```
 
-- Start the API first; set `ASTRO_API_BASE_URL` (default `localhost:3000`).
+- The API is already running at `http://localhost:3000`; do not start it.
+- Override `ASTRO_API_BASE_URL` only for other environments.
 - Open the app at `http://localhost:8080/astrobookings-client/launches`.
 
 ### Folder structure

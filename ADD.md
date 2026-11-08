@@ -40,6 +40,7 @@ Server-rendered Java web client for the AstroBookings API. Customers browse laun
 - JDK 27, Maven 3.9+, WildFly 41, Git, IntelliJ IDEA or VS Code.
 - OpenCode agents and skills in `.opencode/` drive the spec-first workflow.
 - Workflow: spec → tests → implementation → `mvn test` → `mvn package` → `wildfly:deploy` → verification.
+- Local assumption: the ActivityBookings API already runs at `http://localhost:3000`; do not start it.
 - No CI pipeline at this stage; the Maven build is the quality gate.
 
 ## Systems Architecture
