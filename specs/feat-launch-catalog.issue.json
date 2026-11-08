@@ -54,22 +54,22 @@
       "description": "Add the exception type, the activity DTO, the single HTTP client and the launches facade. Owner: coder.",
       "tasks": [
         {
-          "done": false,
+          "done": true,
           "title": "Add exception/ApiException",
           "description": "Runtime exception with int status and user-safe message; static factories apiError(status, message) and networkError(cause). Never include tokens, passwords or full payloads in messages."
         },
         {
-          "done": false,
+          "done": true,
           "title": "Add integration/dto/ActivityDto",
           "description": "Record with id, name, slug, price (BigDecimal), date (String), duration (int), location, minParticipants, maxParticipants, status. Annotate with @JsonIgnoreProperties(ignoreUnknown = true); keep date as String to tolerate date-only and ISO datetime values."
         },
         {
-          "done": false,
+          "done": true,
           "title": "Add integration/ApiClient",
           "description": "Construct exactly one java.net.http.HttpClient from AppConfig (base URL, 5 s connect timeout, 10 s request timeout); expose JsonNode/String GET and typed List<T> GET helpers using Jackson ObjectMapper; map non-2xx to ApiException with status; map IOException/timeouts to networkError; log method, path and status only."
         },
         {
-          "done": false,
+          "done": true,
           "title": "Add integration/LaunchesApi",
           "description": "Facade with List<ActivityDto> findAll() that calls ApiClient GET /activities and deserializes the array. Keep the class non-final and constructor-injected so Mockito can stub it in service tests."
         }
@@ -80,17 +80,17 @@
       "description": "Filter, normalize and sort launches in a servlet-free service. Owner: coder.",
       "tasks": [
         {
-          "done": false,
+          "done": true,
           "title": "Add service/LaunchSummary",
           "description": "Record used by the JSP: id, name, date (LocalDate), dateLabel (formatted e.g. 25 Aug 2026), location, price, durationMinutes, maxParticipants, status, bookable (published or confirmed)."
         },
         {
-          "done": false,
+          "done": true,
           "title": "Add tolerant date parsing",
           "description": "Package-private helper (e.g. LaunchDates) that parses yyyy-MM-dd from the first 10 characters and returns LocalDate; unparseable or null dates sort last while remaining visible. Format dateLabel with a fixed locale so rendering is deterministic."
         },
         {
-          "done": false,
+          "done": true,
           "title": "Add service/CatalogService",
           "description": "Constructor takes LaunchesApi. getVisibleLaunches() fetches all activities, keeps only status published/confirmed (case-insensitive), sorts by LocalDate ascending (tie-break by name), and maps to LaunchSummary. Empty API list yields an empty list; ApiException propagates unchanged. No jakarta.servlet imports."
         }
@@ -101,22 +101,22 @@
       "description": "Expose /launches, redirect the home route, force UTF-8 and turn failures into the friendly catalog error state. Owner: coder.",
       "tasks": [
         {
-          "done": false,
+          "done": true,
           "title": "Add web/CatalogServlet",
           "description": "@WebServlet(\"/launches\"). In init() build AppConfig.fromEnvironment() -> ApiClient -> LaunchesApi -> CatalogService once. doGet calls getVisibleLaunches(), sets request attribute \"launches\", forwards to /WEB-INF/views/launches.jsp. Catch ApiException: log warning, set \"errorMessage\" with a friendly text, forward to the same JSP (HTTP 200) so the retry link is available. Never forward the raw exception message or stack trace."
         },
         {
-          "done": false,
+          "done": true,
           "title": "Add web/HomeServlet",
           "description": "@WebServlet(\"\") (exact context root, not \"/\" which would shadow the default servlet and static assets). doGet redirects to contextPath + \"/launches\"."
         },
         {
-          "done": false,
+          "done": true,
           "title": "Add web/filter/EncodingFilter",
           "description": "@WebFilter(\"/*\") setting request/response character encoding to UTF-8 before the chain, so launch names with accents render correctly."
         },
         {
-          "done": false,
+          "done": true,
           "title": "Confirm configuration wiring",
           "description": "Use the existing AppConfig (ASTRO_API_BASE_URL, default http://localhost:3000, 5 s/10 s timeouts) and web.xml session config (30 min, HttpOnly cookie). Add no new dependencies unless strictly required."
         }
@@ -127,22 +127,22 @@
       "description": "JSP 4.0 + JSTL 3.0, no scriptlets. Owner: coder.",
       "tasks": [
         {
-          "done": false,
+          "done": true,
           "title": "Add view fragments",
           "description": "WEB-INF/views/fragments/header.jspf and footer.jspf: HTML5 doctype, lang=\"en\", meta viewport, CSS link built with c:url, site heading/nav, and a session-aware header. When sessionScope['auth.token'] is empty render links to /login and /register; otherwise show the session username (do not render the token)."
         },
         {
-          "done": false,
+          "done": true,
           "title": "Add launches.jsp",
           "description": "Taglibs core and fmt. Error state first: when errorMessage is present show an alert and a retry link to /launches, and do not attempt to list rows. Empty state when launches is empty. Otherwise a semantic table/list with one row per launch: name, dateLabel, location, price (fmt:formatNumber), durationMinutes (min), maxParticipants (max seats). Wrap each row's name in an anchor to c:url /launches/{id}. Escape all dynamic text with c:out."
         },
         {
-          "done": false,
+          "done": true,
           "title": "Add assets/css/main.css",
           "description": "Small responsive stylesheet: readable typography, catalog table/cards, accessible focus states, error/empty banners. No CSS framework and no JavaScript."
         },
         {
-          "done": false,
+          "done": true,
           "title": "Accessibility and output safety review",
           "description": "Semantic headings, table caption or section heading, sufficient contrast, keyboard-usable links, no scriptlets and no unescaped EL output; verify the page renders without a customer session."
         }
@@ -153,7 +153,7 @@
       "description": "Prove the WAR builds and the page works against the running API. Owner: coder.",
       "tasks": [
         {
-          "done": false,
+          "done": true,
           "title": "Compile and package",
           "description": "Run `mvnw.cmd -B -DskipTests package`; fix compilation warnings/errors. The WAR must be target/astrobookings-client.war."
         },
@@ -174,22 +174,22 @@
       "description": "Owned by the tester agent (coder does not write tests). Tests use stubs and loopback only; no live external network.",
       "tasks": [
         {
-          "done": false,
+          "done": true,
           "title": "CatalogServiceTest",
           "description": "Cover: status filtering (draft/done/cancelled excluded, published/confirmed kept), ascending order with mixed date formats, empty input, ApiException propagation, mapping to LaunchSummary. Stub LaunchesApi with Mockito."
         },
         {
-          "done": false,
+          "done": true,
           "title": "ApiClientTest",
           "description": "Use a loopback com.sun.net.httpserver.HttpServer (or a mocked HttpClient) to assert 200 JSON list mapping, non-2xx -> ApiException with status, malformed JSON handling and timeout/IOException -> network error. No calls to localhost:3000."
         },
         {
-          "done": false,
+          "done": true,
           "title": "CatalogServletTest",
           "description": "Mock HttpServletRequest/Response and CatalogService: success sets launches and forwards to /WEB-INF/views/launches.jsp; ApiException sets errorMessage and still forwards (HTTP 200); HomeServlet redirects to /launches."
         },
         {
-          "done": false,
+          "done": true,
           "title": "AppConfigTest",
           "description": "Assert the default base URL, override via fromValues, blank fallback and trailing-slash normalization."
         },
