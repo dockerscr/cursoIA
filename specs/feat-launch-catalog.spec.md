@@ -2,7 +2,7 @@
 
 - **Reference**: `PRD.md` FR1
 - **Issue**: [`specs/feat-launch-catalog.issue.json`](./feat-launch-catalog.issue.json)
-- **Status**: Planned
+- **Status**: Done
 
 ## Problem Description
 
@@ -38,11 +38,11 @@ The API exposes launches only as JSON, so visitors have no way to discover what 
 
 ## Acceptance Criteria
 
-- [ ] WHEN a visitor requests `/launches` THE AstroBookings Client SHALL retrieve launches from the API.
-- [ ] THE AstroBookings Client SHALL display name, date, location, price, duration and maximum seats for each listed launch.
-- [ ] WHERE a launch status is draft, done or cancelled THE AstroBookings Client SHALL exclude it from the catalog.
-- [ ] THE AstroBookings Client SHALL order the catalog by launch date ascending.
-- [ ] IF the API returns zero visible launches THEN THE AstroBookings Client SHALL display an empty-state message.
-- [ ] IF the API request fails THEN THE AstroBookings Client SHALL display an error message and offer a retry action.
-- [ ] WHEN a visitor selects a launch THE AstroBookings Client SHALL open the launch detail page for that launch.
-- [ ] WHILE no customer session exists THE AstroBookings Client SHALL display links to log in and register.
+- [x] WHEN a visitor requests `/launches` THE AstroBookings Client SHALL retrieve launches from the API.
+- [x] THE AstroBookings Client SHALL display name, date, location, price, duration and maximum seats for each listed launch.
+- [x] WHERE a launch status is draft, done or cancelled THE AstroBookings Client SHALL exclude it from the catalog.
+- [x] THE AstroBookings Client SHALL order the catalog by launch date ascending.
+- [x] IF the API returns zero visible launches THEN THE AstroBookings Client SHALL display an empty-state message.
+- [x] IF the API request fails THEN THE AstroBookings Client SHALL display an error message and offer a retry action.
+- [x] WHEN a visitor selects a launch THE AstroBookings Client SHALL open the launch detail page for that launch.
+- [x] WHILE no customer session exists THE AstroBookings Client SHALL display links to log in and register.

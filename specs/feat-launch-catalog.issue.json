@@ -2,7 +2,7 @@
   "id": "feat-launch-catalog",
   "title": "Feature: Browse the launch catalog",
   "labels": ["enhancement"],
-  "status": "planned",
+  "status": "done",
   "branch": "feat/launch-catalog",
   "specification": "specs/feat-launch-catalog.spec.md",
   "references": [
@@ -205,7 +205,7 @@
       "description": "Owned by devops after verification.",
       "tasks": [
         {
-          "done": false,
+          "done": true,
           "title": "Update traceability",
           "description": "Tick the acceptance criteria in specs/feat-launch-catalog.spec.md, set the issue status to done and update PRD.md FR1 status to Done without changing scope."
         },
