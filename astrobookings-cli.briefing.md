@@ -12,7 +12,7 @@ The client will
 
 - Show booking status and allow customers to view their bookings.
 
-- Could be implemented as a web or terminal app, using the API to interact with the backend. In any language/framework of choice (e.g., React, Vue, Angular, or a CLI tool in Python/Node.js). Even a Java or C# console or web app would work.
+- Debe implementarse una web escrita en java.
 
 > [!WARNING]
 > AstroBookings is a fictional space travel company.

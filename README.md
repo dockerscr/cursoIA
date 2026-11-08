@@ -15,17 +15,10 @@ API mínima en TypeScript y Express .
 
 ## Exercise project : Astro-Bookings-Client
 Aplicación cliente para interactuar con la API de Astro-Bookings.
-En cualquier lenguaje/framework de elección (e.g., React, Vue, Angular, o una CLI en Python/Node.js). 
-Incluso una aplicación de consola o web en Java o C#.
+Aplicación web Java.
 
 - [Exercise project : Astro-Bookings-Client](./astrobookings-cli.briefing.md)
 
-Por supuesto, puedes desarrollarlo con cualquier herramienta de IA que te guste.
-- VSCode + GitHub Copilot
-- Cursor
-- ClaudeCode
-- Antigravity
-- etc.
 
 ---
 
