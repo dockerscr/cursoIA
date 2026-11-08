@@ -194,7 +194,7 @@
           "description": "Assert the default base URL, override via fromValues, blank fallback and trailing-slash normalization."
         },
         {
-          "done": false,
+          "done": true,
           "title": "Playwright E2E",
           "description": "Verify /launches lists only visible launches in ascending order with the six fields, empty and error states, detail navigation to /launches/{id}, and log in/register links for anonymous visitors. Ensure no JWT appears in the HTML."
         }
