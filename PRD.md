@@ -31,7 +31,7 @@ Out of scope:
 ### FR1 Browse the launch catalog
 - **Description**: Display the launches from `GET /activities` on the home page, showing name, date, location, price, duration, and seat capacity for each entry.
 - **Priority**: High
-- **Status**: NotStarted
+- **Status**: Implemented
 
 ### FR2 View launch details
 - **Description**: Provide a dedicated page per launch using `GET /activities/:id` with full details and a call-to-action to book seats.
