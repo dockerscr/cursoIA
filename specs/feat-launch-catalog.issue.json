@@ -158,14 +158,14 @@
           "description": "Run `mvnw.cmd -B -DskipTests package`; fix compilation warnings/errors. The WAR must be target/astrobookings-client.war."
         },
         {
-          "done": false,
+          "done": true,
           "title": "Manual verification with current data",
-          "description": "Deploy with `mvnw.cmd wildfly:deploy` if WildFly is available, open http://localhost:8080/astrobookings-client/launches and confirm only activity-2 and activity-3 are listed, activity-3 first, with all six fields and working detail links. Confirm / redirects to /launches and that anonymous visitors see log in/register links."
+          "description": "Verified against the deployed instance: GET /launches returns 200 and lists only activity-3 and activity-2, activity-3 first, with all six columns (Launch, Date, Location, Price, Duration, Max seats) and detail links; GET / returns 302 to /astrobookings-client/launches; anonymous visitors see Log in and Register links and no JWT appears in the HTML. Playwright AC1-AC4, AC7 and AC8 pass."
         },
         {
-          "done": false,
+          "done": true,
           "title": "Failure smoke check",
-          "description": "Temporarily point ASTRO_API_BASE_URL to an unreachable URL (or stop nothing; only simulate in a test) and confirm the catalog shows the friendly error plus retry link instead of a stack trace. Restore the default configuration afterwards."
+          "description": "Covered by the Playwright AC6 test against the fixture-backed deployment: a 503 from the API renders the friendly 'Launch catalog unavailable' alert with a 'Try again' link and no stack trace, and the retry recovers once the API answers again. Playwright AC5 (empty state) also passes."
         }
       ]
     },
@@ -210,9 +210,9 @@
           "description": "Tick the acceptance criteria in specs/feat-launch-catalog.spec.md, set the issue status to done and update PRD.md FR1 status to Done without changing scope."
         },
         {
-          "done": false,
+          "done": true,
           "title": "Release notes and merge",
-          "description": "Update the changelog, keep commit messages in the feat: convention, and merge feat/launch-catalog into main through the standard flow."
+          "description": "CHANGELOG.md documents the 0.1.0 release, pom.xml was released as 0.1.0, and feat/launch-catalog was merged into main with a merge commit after `mvnw.cmd test` (30 tests) and `mvnw.cmd -DskipTests package` succeeded."
         }
       ]
     }

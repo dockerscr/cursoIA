@@ -6,7 +6,7 @@
 
     <groupId>com.astrobookings</groupId>
     <artifactId>astrobookings-client</artifactId>
-    <version>0.1.0-SNAPSHOT</version>
+    <version>0.1.0</version>
     <packaging>war</packaging>
 
     <name>AstroBookings Client</name>
