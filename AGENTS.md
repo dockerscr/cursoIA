@@ -12,7 +12,7 @@
 - **Build**: Maven, WAR packaging, `wildfly-maven-plugin`
 - **Database**: None; the API is the only source of truth
 - **Security**: JWT in HttpSession, Bearer header, CSRF token on POST
-- **Testing**: JUnit 5 + Mockito + AssertJ; stub ApiClient, no live network
+- **Testing**: JUnit 5 + Mockito + AssertJ for unit tests (stub `ApiClient`, no live network); Playwright for E2E acceptance tests in `tests/`
 - **Logging**: SLF4J over JUL; never log tokens or passwords
 
 ### Development workflow
@@ -23,11 +23,16 @@ mvn clean package   # build the WAR
 mvn test            # run unit tests
 mvn wildfly:deploy  # deploy to a running server
 mvn wildfly:undeploy
+npm install         # install Playwright once
+npx playwright test # E2E acceptance tests (needs the app deployed)
 ```
 
 - The API is already running at `http://localhost:3000`; do not start it.
 - Override `ASTRO_API_BASE_URL` only for other environments.
 - Open the app at `http://localhost:8080/astrobookings-client/launches`.
+- E2E tests expect the app at `http://localhost:8080/astrobookings-client` plus a
+  fixture-backed instance at `http://localhost:8180/astrobookings-client`; the
+  fixture API in `tests/support/fixture-api.mjs` is started by Playwright.
 
 ### Folder structure
 ```text
@@ -37,7 +42,9 @@ mvn wildfly:undeploy
 ├── PRD.md                   # Product requirements
 ├── ADD.md                   # Architecture design
 ├── pom.xml                  # Maven build
+├── playwright.config.ts     # E2E test configuration
 ├── specs/                   # Feature specs and issue JSON files
+├── tests/                   # Playwright E2E acceptance tests and fixture API
 └── src
     ├── main/java/com/astrobookings/client/  # web, service, integration
     ├── main/resources/      # Configuration
